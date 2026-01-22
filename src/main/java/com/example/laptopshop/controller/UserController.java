@@ -1,20 +1,10 @@
 package com.example.laptopshop.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.laptopshop.service.UserService;
 
-// @Controller
-// public class UserController {
-
-// @RequestMapping("/")
-// public String getHomePage() {
-// return "home from controller";
-// }
-// }
-
-@RestController
+@Controller
 public class UserController {
 
     // UserService là dependency được inject vào Controller
@@ -25,8 +15,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("")
+    @RequestMapping("/") // url web
     public String getHomePage() {
-        return this.userService.handleHello();
+
+        String test = this.userService.handleHello();
+        return "hello";
     }
 }

@@ -7,4 +7,8 @@ public class UserService {
     public String handleHello() {
         return "Hello from service";
     }
+
+    public String showInfo() {
+        return "user";
+    }
 }

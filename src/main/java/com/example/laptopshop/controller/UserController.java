@@ -24,4 +24,10 @@ public class UserController {
         model.addAttribute("vuavanhdai", "from controller with model");
         return "hello";
     }
+
+    @RequestMapping("/admin/user") // url web
+    public String getInforPage(Model model) {
+
+        return "admin/user/create";
+    }
 }

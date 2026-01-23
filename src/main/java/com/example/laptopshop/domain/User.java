@@ -2,7 +2,6 @@ package com.example.laptopshop.domain;
 
 public class User {
 
-    // field
     private long id;
     private String email;
     private String password;
@@ -10,39 +9,29 @@ public class User {
     private String address;
     private String phone;
 
-    // contructor
-    public User(long id, String email, String password, String fullName, String address, String phone) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.fullName = fullName;
-        this.address = address;
-        this.phone = phone;
-    }
-
     // getter
-    public long getID() {
-        return this.id = id;
+    public long getId() {
+        return id;
     }
 
     public String getEmail() {
-        return this.email = email;
+        return email;
     }
 
-    public String getPass() {
-        return this.password = password;
+    public String getPassword() {
+        return password;
     }
 
     public String getFullName() {
-        return this.fullName = fullName;
+        return fullName;
     }
 
     public String getAddress() {
-        return this.address = address;
+        return address;
     }
 
     public String getPhone() {
-        return this.phone = phone;
+        return phone;
     }
 
     // setter
@@ -54,7 +43,7 @@ public class User {
         this.email = email;
     }
 
-    public void setPass(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -72,8 +61,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User infomation  -ID: " + this.getID() + " -Email: " + this.getEmail() + " -FullName: "
+        return "User infomation -ID: " + this.getId() + " -Email: " + this.getEmail() + " -FullName: "
                 + this.getFullName() + " -Address: " + this.getAddress() + " -Phone: " + this.getPhone();
     }
-
 }

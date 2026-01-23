@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <html lang="en">
+        <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Create User</title>
 
-            <!-- Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <html lang="en">
 
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Create User</title>
 
-            <!-- jQuery (không bắt buộc, nhưng giữ theo code bạn) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        </head>
+                <!-- Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <body class="bg-light">
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-5">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h3 class="text-center mb-4">Create User</h3>
+                <!-- jQuery (không bắt buộc, nhưng giữ theo code bạn) -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            </head>
 
-                                <form>
-                                    <div class="mb-3">
-                                        <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Enter email">
-                                    </div>
+            <body class="bg-light">
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter password">
-                                    </div>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-5">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h3 class="text-center mb-4">Create User</h3>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Phone</label>
-                                        <input type="text" class="form-control" placeholder="Enter phone">
-                                    </div>
+                                    <form:form method="post" action="/admin/user/create1" modelAttribute="newUser">
+                                        <div class="mb-3">
+                                            <label class="form-label">Email address</label>
+                                            <form:input type="email" class="form-control" placeholder="Enter email"
+                                                path="email" />
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Full Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter full name">
-                                    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <form:password path="password" class="form-control"
+                                                placeholder="Enter password" />
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" class="form-control" placeholder="Enter address">
-                                    </div>
 
-                                    <button type="submit" class="btn btn-primary w-100">
-                                        Create
-                                    </button>
-                                </form>
+                                        <div class=" mb-3">
+                                            <label class="form-label">Phone</label>
+                                            <form:input type="text" class="form-control" placeholder="Enter phone"
+                                                path="phone" />
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label class="form-label">Full Name</label>
+                                            <form:input type="text" class="form-control" placeholder="Enter full name"
+                                                path="fullName" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Address</label>
+                                            <form:input type="text" class="form-control" placeholder="Enter address"
+                                                path="address" />
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            Create
+                                        </button>
+                                    </form:form>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </body>
+            </body>
 
-        </html>
+            </html>

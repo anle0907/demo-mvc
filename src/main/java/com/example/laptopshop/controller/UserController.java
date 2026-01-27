@@ -1,5 +1,7 @@
 package com.example.laptopshop.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,8 @@ public class UserController {
 
     @RequestMapping("/") // url web
     public String getHomePage(Model model) {
-
+        List<User> arrUser = this.userService.getAllUserByEmail("gio@gmail.com");
+        System.out.println(arrUser);
         model.addAttribute("anle", "test");
         model.addAttribute("vuavanhdai", "from controller with model");
         return "hello";
@@ -41,7 +44,7 @@ public class UserController {
         // @ModelAttribute dùng để bind dữ liệu từ form (view)
         // vào object User (biến an) trong Controller
 
-        System.out.println("Run here" + an);
+        System.out.println("Run here  " + an);
         this.userService.handleSaveUser(an); // method define o service
         return "hello";
     }

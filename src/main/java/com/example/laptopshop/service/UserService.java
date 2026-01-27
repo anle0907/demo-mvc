@@ -1,5 +1,7 @@
 package com.example.laptopshop.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.laptopshop.domain.User;
@@ -20,6 +22,16 @@ public class UserService {
 
     public String showInfo() {
         return "user";
+    }
+
+    // Method tìm tất cả User
+    public List<User> getAllUser() {
+        return this.userRepository.findAll();
+    }
+
+    // Method tìm tất cả User bằng email
+    public List<User> getAllUserByEmail(String email) {
+        return this.userRepository.findByEmail(email);
     }
 
     public User handleSaveUser(User user) {

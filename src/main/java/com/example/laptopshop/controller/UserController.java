@@ -3,6 +3,7 @@ package com.example.laptopshop.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,6 +57,7 @@ public class UserController {
         return "admin/user/user_detail";
     }
 
+    // Create
     @RequestMapping("/admin/user/create")
     public String getCreatePage(Model model) {
         model.addAttribute("newUser", new User());
@@ -89,6 +91,20 @@ public class UserController {
 
             this.userService.handleSaveUser(currentUser);
         }
+        return "redirect:/admin/user";
+    }
+
+    // Delete
+    @GetMapping("/admin/user/delete/{id}")
+    public String getDeleteUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("newUser", new User());
+        return "admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String postDeleteUserPage(Model model, @ModelAttribute("newUser") User deleteData) {
+        this.userService.deleteUser(deleteData.getId());
         return "redirect:/admin/user";
     }
 

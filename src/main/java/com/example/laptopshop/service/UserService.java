@@ -39,6 +39,11 @@ public class UserService {
         return this.userRepository.findById(id);
     }
 
+    // Method delete by id
+    public void deleteUser(long id) {
+        this.userRepository.deleteById(id);
+    }
+
     // Method luu data object
     public User handleSaveUser(User user) {
         User an = this.userRepository.save(user);

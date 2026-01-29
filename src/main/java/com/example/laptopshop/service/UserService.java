@@ -34,6 +34,12 @@ public class UserService {
         return this.userRepository.findByEmail(email);
     }
 
+    // Method tìm theo id
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
+    }
+
+    // Method luu data object
     public User handleSaveUser(User user) {
         User an = this.userRepository.save(user);
         return an;

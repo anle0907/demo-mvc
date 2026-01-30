@@ -9,7 +9,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create User</title>
+                <title>Update User</title>
 
                 <!-- Bootstrap CSS -->
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,21 +28,20 @@
                         <div class="col-md-6 col-lg-5">
                             <div class="card shadow">
                                 <div class="card-body">
-                                    <h3 class="text-center mb-4">Create User</h3>
+                                    <h3 class="text-center mb-4">Update User</h3>
 
-                                    <form:form method="post" action="/admin/user/create" modelAttribute="newUser">
+                                    <form:form method="post" action="/admin/user/update" modelAttribute="newUser">
+
+                                        <div class="mb-3">
+                                            <label class="form-label">ID: </label>
+                                            <form:input type="text" class="form-control" path="id" />
+                                        </div>
+
                                         <div class="mb-3">
                                             <label class="form-label">Email address</label>
                                             <form:input type="email" class="form-control" placeholder="Enter email"
-                                                path="email" />
+                                                path="email" disabled="true" />
                                         </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label">Password</label>
-                                            <form:password path="password" class="form-control"
-                                                placeholder="Enter password" />
-                                        </div>
-
 
                                         <div class=" mb-3">
                                             <label class="form-label">Phone</label>
@@ -62,8 +61,8 @@
                                                 path="address" />
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary w-100">
-                                            Create
+                                        <button type="submit" class="btn btn-warning w-100">
+                                            Save
                                         </button>
                                     </form:form>
 

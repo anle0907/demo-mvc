@@ -1,8 +1,19 @@
 package com.example.laptopshop.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity // annotation
+// @Table(name = "nguoi_dung") thay đổi tên table
+
 public class User {
 
+    @Id // annotation
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Tự động tăng giá trị ID
     private long id;
+
     private String email;
     private String password;
     private String fullName;
